@@ -24,3 +24,27 @@ for i in range(1, N + 1):
         divisor.append(i)
 
 print(divisor,"divisor")
+
+
+
+
+
+# ------------------------OPTIMAL APPROACH-----------------------------------
+
+N = int(input("Enter N: "))
+
+divisors = []
+
+i = 1
+while i <= N**0.5:
+    if N % i == 0:
+        divisors.append(i)
+
+        # Add the pair divisor if it's different
+        if i != N // i:
+            divisors.append(N // i)
+    i += 1
+
+divisors.sort()
+
+print(divisors, "divisors")
